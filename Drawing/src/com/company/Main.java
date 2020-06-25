@@ -239,6 +239,17 @@ public class Main {
         }*/
 
 
+        //ENVELOPE STAR
+        int numberOfLines = 20;
+        int sumOfLines = 20;
+        int x = 160;
+        int y = 0;
+        for (int i = 0; i < numberOfLines; i++) {
+            envelopeStar(x, y, sumOfLines, graphics);
+            x += 5;
+            y += 5;
+        }
+
 
 
     }
@@ -308,6 +319,14 @@ public class Main {
             graphics.drawPolygon(xPoly, yPoly, xPoly.length);
         }
     }*/
+
+    public static void envelopeStar (int x, int y, int sumLines, Graphics graphics) {
+        Point pointCenter = new Point(160,160);
+        graphics.setColor(Color.green);
+        for (int i = 0; i < sumLines; i++) {
+            graphics.drawLine(x+i*10, y+i*10, pointCenter.x, pointCenter.y);
+        }
+    }
 }
 
 

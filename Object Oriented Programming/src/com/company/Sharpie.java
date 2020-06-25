@@ -1,4 +1,4 @@
 package com.company;
 
-public class StdDraw {
+public class Sharpie {
 }

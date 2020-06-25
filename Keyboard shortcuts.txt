@@ -1,0 +1,17 @@
+keyboard shortcuts:
+sout + tab ->System.out.printLn();
+fore + tab -> foreach loop
+fori + tab -> for loop
+alt + enter -> show intention actions and quick fixes
+ctrl + space -> basic code completion helps you complete the names of classes, methods, fields, and keywords within the visibility scope
+ctrl + q -> information about object
+ctrl + alt + L -> formating content
+ctrl + d -> copying and pasting exact line
+ctrl + i -> methods to implements
+ctrl + shift + a -> find a command and execute it, open a tool window or search for a setting
+ctrl + x -> cuting the line
+double shift (two times shift) -> find anything related to IntelliJ IDEA or your project and open it, execute it, or jump to it
+ctrl + f -> search for something in your code
+alt + shif -> switching to another keyboard (eng -> cze and vice versa)
+Ctrl+Shift+Slash -> for block comment
+always try to formate your code! its easy by using the ctr l+ alt + L ! (edited) 
