@@ -10,7 +10,7 @@ public class Ship {
         Pirate captain = new Pirate();
         System.out.println("Captain drank " + captain.rumShots + " of rum.");
         if (captain.goingToSleepItOff == true) {
-            System.out.println("Captain has to sleep it off.");
+            System.out.pgrintln("Captain has to sleep it off.");
         } if (captain.deadOrNot == true) {
             System.out.println("Captain died");
         } else {
