@@ -9,6 +9,7 @@ public class Animal {
         this.hunger = 50;
         this.thirst = 50;
     }*/
+
     public void eat () {
         this.hunger -= 1;
         System.out.println(this.hunger);
