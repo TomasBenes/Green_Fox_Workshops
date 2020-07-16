@@ -46,14 +46,10 @@ public class Main {
             System.out.println();
         }*/
 
-        Animal cat = new Cat(10);
-        cat.name = "Whiskers";
-        cat.isAdoptable(true);
-        cat.toString();
+        Animal animal1 = new Animal ("Elephant");
+        animal1.heal();
+        animal1.toString();
+        System.out.println(animal1.toString());
 
-        Animal dog = new Dog(10);
-        dog.name = "Benny";
-        dog.isAdoptable(false);
-        dog.toString();
     }
 }

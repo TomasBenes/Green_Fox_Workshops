@@ -4,8 +4,8 @@ import java.util.Random;
 
 public class Dog extends Animal {
 
-    public Dog (int healCost) {
+    public Dog () {
         Random randomNumber = new Random();
-        this.healCost = randomNumber.nextInt(8 - 1 + 1) + 1;
+        this.healCost = randomNumber.nextInt(8) + 1;
     }
 }
