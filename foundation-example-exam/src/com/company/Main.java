@@ -1,6 +1,8 @@
 package com.company;
 
 import com.company.Animal_protection.Animal;
+import com.company.Animal_protection.Cat;
+import com.company.Animal_protection.Dog;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -44,5 +46,14 @@ public class Main {
             System.out.println();
         }*/
 
+        Animal cat = new Cat(10);
+        cat.name = "Whiskers";
+        cat.isAdoptable(true);
+        cat.toString();
+
+        Animal dog = new Dog(10);
+        dog.name = "Benny";
+        dog.isAdoptable(false);
+        dog.toString();
     }
 }

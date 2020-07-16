@@ -14,9 +14,13 @@ public class AnimalShelter extends Animal {
     }
 
     public void heal (){
+        if (this.budget > 0 && this.isHealthy == false) {
+            heal();
+        }
     }
 
     public void addAdopter (String name) {
+
         this.adoptersName.add(name);
     }
 
@@ -32,12 +36,17 @@ public class AnimalShelter extends Animal {
     public String toString () {
         System.out.println("Budget: " + this.budget + "€,");
         System.out.println("There are " + this.animals.size() + " animal(s) and " + this.adoptersName.size() + " potential adopter(s)");
+        String notHealthyAnimal;
+        String healthyAnimal;
         if (isHealthy == false) {
-            String badAnimal = this.name + " is not healthy (" + this.healCost + "€), and not adoptable";
-            return badAnimal;
-        } else {
-            String goodAnimal = this.name + " is healthy, and adoptable";
-            return goodAnimal;
+            notHealthyAnimal = this.name + " is not healthy (healing would cost: " + this.healCost + "€), and not adoptable";
+            System.out.println(notHealthyAnimal);
+            return notHealthyAnimal;
+        }
+        else {
+            healthyAnimal = this.name + " is healthy, and adoptable";
+            System.out.println(healthyAnimal);
+            return healthyAnimal;
         }
     }
 }

@@ -1,16 +1,16 @@
 package com.company.Animal_protection;
 
 public class Animal {
-    String ownerName;
-    Boolean isHealthy;
-    int healCost;
-    String name;
+    public String ownerName;
+    public Boolean isHealthy;
+    public int healCost;
+    public String name;
 
-    public void heal (Boolean isHealthy) {
+    public void heal () {
         this.isHealthy = true;
     }
 
-    public static boolean isAdoptable (Boolean isHealthy) {
+    public boolean isAdoptable (Boolean isHealthy) {
         if (isHealthy == true) {
            return true;
         } else {
@@ -18,12 +18,16 @@ public class Animal {
         }
     }
 
-    public String toString ( Boolean isHealthy, int healCost, String name) {
-        if (isHealthy == true) {
-            String goodAnimal = this.name + " is healthy, and adoptable";
+    public String toString () {
+        String goodAnimal;
+        String badAnimal;
+        if (isAdoptable(true) == true) {
+            goodAnimal = this.name + " is healthy, and adoptable";
+            System.out.println(goodAnimal);
             return goodAnimal;
         } else {
-            String badAnimal = this.name + " is not healthy (" + this.healCost + "€), and not adoptable";
+            badAnimal = this.name + " is not healthy (" + this.healCost + "€), and not adoptable";
+            System.out.println(badAnimal);
             return badAnimal;
         }
     }
