@@ -6,6 +6,11 @@ public class Parrot extends Animal {
 
     public Parrot () {
         Random randomNumber = new Random();
-        this.healCost = randomNumber.nextInt(10) + 4;
+        this.healCost = randomNumber.nextInt(7) + 4;
+        this.name = "Parrot";
+    }
+
+    public Parrot(String name){
+        super(name);
     }
 }

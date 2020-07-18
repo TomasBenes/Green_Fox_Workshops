@@ -1,6 +1,7 @@
 package com.company.Animal_protection;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 public class AnimalShelter {
@@ -19,6 +20,7 @@ public class AnimalShelter {
         for (Animal animal : animals) {
             if (animal.isHealthy == false && this.budget >= animal.healCost) {
                animal.heal();
+               this.budget = this.budget - animal.healCost;
                count += 1;
                 break;
             }
@@ -31,19 +33,18 @@ public class AnimalShelter {
     }
 
     public void findNewOwner () {
-        Random randomAnimal = new Random();
-        Random randomName = new Random();
-        for (String name : adoptersName) {
-            for (Animal animal : animals) {
-                if (animal.isAdoptable() == true) {
-                    name = randomName.toString();
-                    animal = randomAnimal.toString();
-                }
-
+        Random random = new Random();
+        List<Animal> adoptablesAnimals = new ArrayList<>();
+        for (Animal animal : animals) {
+            if (animal.isAdoptable()) {
+                adoptablesAnimals.add(animal);
             }
-
         }
+        String randomOwner = adoptersName.get(random.nextInt(adoptersName.size()));
+        Animal randomAnimal = adoptablesAnimals.get(random.nextInt(adoptablesAnimals.size()));
+
     }
+
 
     public int earnDonation (int amount) {
         this.budget += amount;
@@ -51,17 +52,11 @@ public class AnimalShelter {
     }
 
     public String toString () {
-        String shelter;
-        System.out.println("Budget: " + this.budget + "€,");
-        System.out.println("There are " + this.animals.size() + " animal(s) and " + this.adoptersName.size() + " potential adopter(s)");
+        String shelter = "Budget: " + budget + "€,\n";
+        shelter += "There are " + animals.size() + " animal(s) and " + adoptersName.size() + " potential adopter(s)\n";
         for (Animal animal : animals) {
-            if (animal.isHealthy == true) {
-                shelter = animal.name + " is healthy, and adoptable";
-                return shelter;
-            } else {
-                shelter = animal.name + " is not healthy (" + animal.healCost + "€), and not adoptable";
-                return shelter;
-            }
+            shelter += animal.toString() + "\n";
         }
+        return shelter;
     }
 }
