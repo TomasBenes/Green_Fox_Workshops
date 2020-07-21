@@ -1,7 +1,3 @@
-package com.company;
-
-
-
 import java.io.File;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -26,19 +22,19 @@ public class Todo {
       if (args.length == 0) {
             printUsageInformation();
         }
-        else if (args[0] == "-l"){
+        else if (args[0].equals("-l")){
             listTasks(path);
         }
-        else if (args[0] == "-l" && file.length() == 0)  {
+        else if (args[0].equals("-l") && file.length() == 0)  {
           emptyList();
         }
-        else if (args[0] == "-a" + "Feed the monkey") {
+        else if (args[0].equals("-a" + "Feed the monkey")) {
           addNewTask(path);
         }
-        else if (args[0] == "-a") {
+        else if (args[0].equals("-a")) {
           addNewTaskErrorHandling();
         }
-        else if (file.length() >= 2 && args[0] == "-r 2") {
+        else if (file.length() >= 2 && args[0].equals("-r 2")) {
             removeTask();
       }
 
